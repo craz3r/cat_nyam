@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Нямушка</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/ractive"></script>
+</head>
+<body>
+	<main class="container">
+		<h1 class="page-slogan">Ты сегодня покормил кота?</h1>
+		<section class="food">
+			<ul class="food__list" id="target">
+				<script id="template" type="text/ractive">
+				{{#each model}}
+					<li class="food__product product">
+					<article>
+						<div class="product__bg">
+							<div class="product__info">
+								{{#if isHovered}}
+									<p class="product__name product__name--active">Котэ не одобряет?</p>
+								{{else}}
+									<p class="product__name">Сказочное заморское яство</p>
+								{{/if}}
+								<h2 class="product__title">Нямушка</h2>
+								<p class="product__filler">{{filler}}</p>
+								<ul class="product__bonus-list bonus">
+								  {{#each this.bonus}}
+										<li class="bonus__item">{{this}}</li>
+									{{/each}}
+								</ul>
+								<div class="product__weight weight">
+									<span class="weight__number">{{weight}}</span>
+									<span class="weight__unit">кг</span>
+								</div>
+							</div>
+						</div>
+						{{#if isSelected}}
+							<p class="product__description">{{description}}</p>
+						{{elseif isDisabled}}
+							<p class="product__description product__description--disabled">
+								{{disabledText}}
+							</p>
+						{{else}}
+							<p class="product__description">
+								Чего сидишь? Порадуй котэ, <a href="#" class="product__buy-link">купи</a>.
+							</p>
+						{{/if}}
+					</article>
+				</li>
+				{{/each}}
+				</script>
+			</ul>
+		</section>
+	</main>
+	<script src="js/script.js"></script>
+</body>
+</html>

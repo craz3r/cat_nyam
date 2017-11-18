@@ -1,0 +1,166 @@
+.product {
+	width: $product-width;
+
+	&--hovered {
+		.product__info {
+			border-color: $hover-color;
+
+			&::before {
+				border-right-color: $hover-color;
+			}
+		}
+
+		.weight {
+			background-color: $hover-color;
+		}
+	}
+
+	&--selected {
+		.product__info {
+			border-color: $select-color;
+
+			&::before {
+				border-right-color: $select-color;
+			}
+		}
+
+		.weight {
+			background-color: $select-color;
+		}
+	}
+
+	&--selectHovered {
+		.product__info {
+			border-color: $select-hover-color;
+
+			&::before {
+				border-right-color: $select-hover-color;
+			}
+		}
+
+		.weight {
+			background-color: $select-hover-color;
+		}
+	}
+
+	&--disabled {
+		.product__info {
+			border-color: $disabled-color;
+			opacity: 0.5;
+			color: $disabled-color;
+
+			&::before {
+				border-right-color: $disabled-color;
+			}
+		}
+
+		.product__filler {
+			color: $disabled-color;
+		}
+
+		.bonus {
+			color: $disabled-color;
+		}
+
+		.weight {
+			background-color: $disabled-color;
+			opacity: 1;
+		}
+	}
+
+	&__bg {
+		background-color: $bg-color;
+		clip-path: polygon(42px 0, 100% 0, 100% 100%, 0 100%, 0 42px);
+		position: relative;
+		border-radius: 10px;
+	}
+
+	&__info {
+		background-color: $bg-color;
+		padding: 20px 45px;
+		min-height: 432px;
+		border: 4px solid $default-color;
+		background-image: url("../img/photo.png");
+		background-repeat: no-repeat;
+		background-position: -30px 205px;
+		position: relative;
+		border-radius: 10px;
+
+		&::before {
+			border-right: 4px solid $default-color;
+			width: 20px;
+			height: 64px;
+			content: "";
+			position: absolute;
+			transform: rotate(45deg);
+			left: 1px;
+			top: -22.5px;
+			background: tranparent;
+		}
+
+		@media screen and (max-width: $mobile-width) {
+			min-height: 232px;
+			text-align: right;
+			background-position: 0 30px;
+		}
+	}
+
+	&__name {
+		margin-top: -2px;
+		color: #666666;
+
+		&--active {
+			color: $select-hover-color;
+		}
+	}
+
+	&__title {
+		font-weight: bold;
+		font-size: 3rem;
+		margin: -11px 0 0 -2px;
+	}
+
+	&__filler {
+		margin: 0 0 0;
+		color: #000000;
+		font-weight: bold;
+		font-size: 1.5rem;
+	}
+
+	&__bonus-list {
+		margin-top: 16px;
+	}
+
+	&__weight {
+		position: absolute;
+		bottom: 11px;
+		right: 11px;
+
+		@media screen and (max-width: $mobile-width) {
+			bottom: 75px;
+			right: 175px;
+		}
+	}
+
+	&__description {
+		font-size: 0.8125rem;
+		line-height: 1.2rem;
+		color: #ffffff;
+		text-align: center;
+
+		&--disabled {
+			color: $disabled-text-color;
+		}
+	}
+
+	&__buy-link {
+		color: $default-color;
+		text-decoration: none;
+		border-bottom: 1px dashed $default-color;
+		font-weight: bold;
+	}
+
+	@media screen and (max-width: $mobile-width) {
+		width: 100%;
+	}
+}

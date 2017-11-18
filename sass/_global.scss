@@ -1,0 +1,69 @@
+@font-face {
+	font-family: "Exo-Thin";
+	src: url("../fonts/Exo2.0-Thin.eot");
+	src: local("☺"), url("../fonts/Exo2.0-Thin.woff") format("woff"), url("../fonts/Exo2.0-Thin.ttf") format("truetype"), url("../fonts/Exo2.0-Thin.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	font-size: $font-size-base;
+}
+
+body {
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%), #000000 url("../img/bg.jpg") repeat 0 0;
+	font-family: "Trebuchet MS", sans-serif;
+	font-weight: normal;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	max-width: $max-width-desktop;
+	margin: 0 auto;
+}
+
+.page-slogan {
+	font-family: "Exo-Thin", sans-serif;
+	font-size: 2.25rem;
+	color: #ffffff;
+}
+
+.food {
+	width: 100%;
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		@media screen and (max-width: 1120px) {
+			justify-content: space-around;
+		}
+	}
+
+	&__product {
+		margin-right: 80px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@media screen and (max-width: 1120px) {
+			margin: 0;
+		}
+
+		@media screen and (max-width: $mobile-width) {
+			margin: 0 20px;
+		}
+	}
+}
