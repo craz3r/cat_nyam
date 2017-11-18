@@ -5,7 +5,6 @@
 	<title>Нямушка</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/style.css">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/ractive"></script>
 </head>
 <body>
@@ -41,7 +40,7 @@
 							<p class="product__description">{{description}}</p>
 						{{elseif isDisabled}}
 							<p class="product__description product__description--disabled">
-								{{disabledText}}
+								Печалька, {{filler}} закончился
 							</p>
 						{{else}}
 							<p class="product__description">
@@ -55,6 +54,7 @@
 			</ul>
 		</section>
 	</main>
+	<script src="js/jquery-3.2.1.min.js"/></script>
 	<script src="js/script.js"></script>
 </body>
 </html>
