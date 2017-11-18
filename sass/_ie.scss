@@ -1,0 +1,31 @@
+/*For IE*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.product {
+		&__info {
+			border-top-left-radius: 55px;
+			&::before {
+				display: none;
+			}
+		}
+
+		&__bg {
+			border-top-left-radius: 55px;
+		}
+	}
+}
+
+/*For Edge*/
+@supports (-ms-ime-align:auto) {
+	.product {
+		&__info {
+			border-top-left-radius: 55px;
+			&::before {
+				display: none;
+			}
+		}
+
+		&__bg {
+			border-top-left-radius: 55px;
+		}
+	}
+}

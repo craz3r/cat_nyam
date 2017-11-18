@@ -8,12 +8,18 @@
 
 html {
 	font-size: $font-size-base;
+	height: 100%;
 }
 
 body {
-	background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%), #000000 url("../img/bg.jpg") repeat 0 0;
 	font-family: "Trebuchet MS", sans-serif;
 	font-weight: normal;
+	height: 100%;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%), #000000 url("../img/bg.jpg") repeat 0 0;
+
+	@media screen and (max-width: 960px) {
+		height: auto;
+	}
 }
 
 ul,
@@ -24,6 +30,7 @@ ol {
 }
 
 .container {
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -36,6 +43,8 @@ ol {
 	font-family: "Exo-Thin", sans-serif;
 	font-size: 2.25rem;
 	color: #ffffff;
+	text-align: center;
+	width: 100%;
 }
 
 .food {
@@ -56,6 +65,10 @@ ol {
 
 		&:last-child {
 			margin-right: 0;
+
+			@media screen and (max-width: $mobile-width) {
+				margin-right: 20px;
+			}
 		}
 
 		@media screen and (max-width: 1120px) {

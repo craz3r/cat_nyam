@@ -432,13 +432,18 @@ template {
   font-style: normal; }
 
 html {
-  font-size: 16px; }
+  font-size: 16px;
+  height: 100%; }
 
 body {
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), color-stop(50%, transparent), to(rgba(0, 0, 0, 0.5))), #000000 url("../img/bg.jpg") repeat 0 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 50%, rgba(0, 0, 0, 0.5) 100%), #000000 url("../img/bg.jpg") repeat 0 0;
   font-family: "Trebuchet MS", sans-serif;
-  font-weight: normal; }
+  font-weight: normal;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), color-stop(50%, transparent), to(rgba(0, 0, 0, 0.5))), #000000 url("../img/bg.jpg") repeat 0 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 50%, rgba(0, 0, 0, 0.5) 100%), #000000 url("../img/bg.jpg") repeat 0 0; }
+  @media screen and (max-width: 960px) {
+    body {
+      height: auto; } }
 
 ul,
 ol {
@@ -447,6 +452,7 @@ ol {
   list-style: none; }
 
 .container {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -466,7 +472,9 @@ ol {
 .page-slogan {
   font-family: "Exo-Thin", sans-serif;
   font-size: 2.25rem;
-  color: #ffffff; }
+  color: #ffffff;
+  text-align: center;
+  width: 100%; }
 
 .food {
   width: 100%; }
@@ -487,6 +495,9 @@ ol {
     margin-right: 80px; }
     .food__product:last-child {
       margin-right: 0; }
+      @media screen and (max-width: 640px) {
+        .food__product:last-child {
+          margin-right: 20px; } }
     @media screen and (max-width: 1120px) {
       .food__product {
         margin: 0; } }
@@ -552,7 +563,7 @@ ol {
       -webkit-transform: rotate(45deg);
               transform: rotate(45deg);
       left: 1px;
-      top: -22.5px;
+      top: -23px;
       background: tranparent; }
     @media screen and (max-width: 640px) {
       .product__info {
@@ -631,3 +642,21 @@ ol {
   .bonus__item {
     font-size: 0.875rem;
     line-height: 1.14; }
+
+/*For IE*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .product__info {
+    border-top-left-radius: 55px; }
+    .product__info::before {
+      display: none; }
+  .product__bg {
+    border-top-left-radius: 55px; } }
+
+/*For Edge*/
+@supports (-ms-ime-align: auto) {
+  .product__info {
+    border-top-left-radius: 55px; }
+    .product__info::before {
+      display: none; }
+  .product__bg {
+    border-top-left-radius: 55px; } }
